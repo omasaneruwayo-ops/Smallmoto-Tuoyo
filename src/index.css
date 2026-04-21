@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0c;
+  --color-panel: #151518;
+  --color-accent: #3a86ff;
+  --color-danger: #ff4d4d;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #8E9299;
+  --color-line: rgba(255, 255, 255, 0.1);
+  
+  --font-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-primary font-sans antialiased;
+  }
+}
+
+.status-bar {
+  @apply h-10 bg-panel border-b border-line flex justify-between items-center px-6 text-[10px] tracking-widest uppercase text-text-secondary;
+}
+
+.status-item span {
+  @apply text-text-primary font-semibold ml-1;
+}
+
+.dash-panel {
+  @apply bg-black/30 rounded-xl p-5 flex flex-col justify-between border border-line;
+}
+
+.panel-title {
+  @apply text-[10px] text-text-secondary uppercase tracking-widest mb-3;
+}
+
+.data-row {
+  @apply flex justify-between mb-2 text-xs;
+}
+
+.data-key {
+  @apply text-text-secondary;
+}
+
+.data-val {
+  @apply font-mono text-text-primary;
+}
+
+.gauge {
+  @apply w-44 h-44 border-8 border-[#222] rounded-full flex flex-col items-center justify-center relative shadow-[inset_0_0_20px_rgba(0,0,0,0.5)];
+}
+
+.gauge-inner {
+  @apply w-36 h-36 border border-dashed border-text-secondary rounded-full flex flex-col items-center justify-center;
+}
+
+.gauge-value {
+  @apply text-5xl font-mono font-bold text-accent leading-none;
+}
+
+.gauge-label {
+  @apply text-[10px] uppercase text-text-secondary mt-1;
+}
